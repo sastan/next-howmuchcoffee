@@ -1,6 +1,5 @@
 type Coffee {
   amount: Int!
-  date: Time!
   notes: String
   person: Person
 }
