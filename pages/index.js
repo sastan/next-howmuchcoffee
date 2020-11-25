@@ -1,19 +1,32 @@
+import { useQuery } from "urql";
+
 import Layout from "../components/layout";
 
+const getAllPersonsAndCoffees = `
+query getAllPersonsAndCoffees {
+  person {
+    data {
+      name
+      age
+      email
+      coffees {
+        data {
+          amount
+        }
+      }
+    }
+  }
+}
+`;
 function IndexPage() {
+  const [result, reexecuteQuery] = useQuery({ query: getAllPersonsAndCoffees });
+
+  if (result.fetching) return <p>Loading...</p>;
+  if (result.error) return <p>Oh no... {result.error.message}</p>;
   return (
     <Layout>
-      <div className="flex flex-col items-center justify-center">
-        <img
-          src="team-of-critters.svg"
-          className="w-full max-w-xl"
-          alt="Four one-eyed aliens playing"
-        />
-
-        <h2 className="p-3 my-8 text-lg font-bold bg-yellow-400 md:text-2xl">
-          Hi! Welcome to your first Next.js site.
-        </h2>
-      </div>
+      {console.log(result)}
+      <h1>test</h1>
     </Layout>
   );
 }
