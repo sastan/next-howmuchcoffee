@@ -1,5 +1,5 @@
 type Coffee {
-  amount: Int!
+  amount: Float!
   notes: String
   person: Person
 }
