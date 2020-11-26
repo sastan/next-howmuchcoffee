@@ -1,6 +1,7 @@
 import { useQuery } from "urql";
 
 import Layout from "../components/layout";
+import StackedList from "../components/StackedList";
 
 const getAllPersonsAndCoffees = `
 query getAllPersonsAndCoffees {
@@ -27,6 +28,7 @@ function IndexPage() {
     <Layout>
       {console.log(result)}
       <h1>test</h1>
+      <StackedList />
     </Layout>
   );
 }
