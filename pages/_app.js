@@ -1,20 +1,6 @@
 import "../css/index.css";
-
-import { createClient, Provider,defaultExchanges } from "urql";
-import { devtoolsExchange } from '@urql/devtools';
-const client = createClient({
-  url: "https://graphql.fauna.com/graphql",
-  exchanges: [devtoolsExchange, ...defaultExchanges],
-
-  fetchOptions: () => {
-    return {
-      headers: {
-        authorization: `Bearer ${process.env.NEXT_PUBLIC_FAUNA_ADMIN_KEY}`,
-      },
-    };
-  },
-});
-
+import { createClient, Provider, defaultExchanges } from "urql";
+import client from "@client";
 function MyApp({ Component, pageProps }) {
   return (
     <Provider value={client}>

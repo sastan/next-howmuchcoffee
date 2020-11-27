@@ -6,8 +6,10 @@ type Coffee {
 
 type Person {
   name: String!
+  slug: String
   age: Int!
   email: String!
+  avatar: String
   coffees: [Coffee] @relation
 }
 

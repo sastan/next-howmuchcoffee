@@ -1,8 +1,12 @@
 import Layout from "../components/layout";
+import { getPersonNameForSlug, testGQL } from "@gqlClient";
 
 function AboutPage() {
+  const data = testGQL();
+
   return (
     <Layout>
+      {console.log(data)}
       <div className="flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0">
         <div className="space-y-6 md:w-1/2">
           {[
@@ -35,6 +39,12 @@ function AboutPage() {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
 }
 
 export default AboutPage;

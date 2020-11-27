@@ -23,11 +23,15 @@
   "homepage": "https://howmuchcoffee.mozart409.space",
   "dependencies": {
     "@urql/devtools": "^2.0.2",
+    "classnames": "^2.2.6",
     "graphql": "^15.4.0",
+    "graphql-request": "^3.3.0",
     "next": "10.0.3",
+    "next-urql": "^2.1.1",
     "postcss": "^8.1.10",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-is": "^17.0.1",
     "urql": "^1.11.3"
   },
   "devDependencies": {
