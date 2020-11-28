@@ -4,7 +4,8 @@
     "paths": {
       "@api": ["lib/api.js"],
       "@client": ["lib/urqlClient.js"],
-      "@gqlClient": ["lib/gqlClient.js"]
+      "@gqlClient": ["lib/gqlClient.js"],
+      "@lib/*": ["lib"]
     }
   }
 }
