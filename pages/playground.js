@@ -1,11 +1,9 @@
-import { fetcherPaths } from "@gqlClient";
+const Playground = props => {
+  console.log(props.slugs.data.person.data)
 
-const fetcher = (url) => fetch(url).then((r) => r.json());
-const Playground = (props) => {
   return (
     <div>
       Playground
-      <span>{props.user}</span>
       {/*    {data &&
         data.map((node) => (
           <div>
@@ -13,16 +11,18 @@ const Playground = (props) => {
            
           </div>
         ))} */}
-      {console.log(data)}
     </div>
-  );
-};
-
-export async function getStaticProps(context) {
-  const user = fetcher("/api/user");
-  return {
-    props: { user },
-  };
+  )
 }
 
-export default Playground;
+export async function getStaticProps (context) {
+  const res = await fetch('http://localhost:3000/api/slug')
+  const slugs = await res.json()
+
+  /* const paths = slugs.map(node => ({ params: { slug: node.slug } })) */
+  return {
+    props: { slugs }
+  }
+}
+
+export default Playground
