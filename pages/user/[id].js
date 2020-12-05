@@ -1,12 +1,13 @@
+import Layout from 'components/layout'
 import userWithCoffee from 'lib/query/userWithCoffee'
 
 const User = ({ UserData }) => {
   console.log(UserData)
 
   return (
-    <div>
+    <Layout>
       Email <span>{UserData.email}</span>
-    </div>
+    </Layout>
   )
 }
 

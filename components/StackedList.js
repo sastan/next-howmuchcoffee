@@ -5,7 +5,7 @@ const StackedList = props => {
         {props.data &&
           props.data.map(node => (
             <li key={node._id}>
-              <a href={node.slug} className='block hover:bg-gray-50'>
+              <a href={`/user/${node.slug}`} className='block hover:bg-gray-50'>
                 <div className='flex items-center px-4 py-4 sm:px-6'>
                   <div className='flex items-center flex-1 min-w-0'>
                     <div className='flex-shrink-0'>
