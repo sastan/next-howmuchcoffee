@@ -1,16 +1,10 @@
-const Playground = props => {
-  console.log(props.slugs.data.person.data)
+function Playground ({ slugs }) {
+  /* console.log(props.slugs.data.person.data) */
 
   return (
     <div>
       Playground
-      {/*    {data &&
-        data.map((node) => (
-          <div>
-            {node.ref.ts}
-           
-          </div>
-        ))} */}
+      {slugs && slugs.map(node => <div>{node.ref.ts}</div>)}
     </div>
   )
 }
