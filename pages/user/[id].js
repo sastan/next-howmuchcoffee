@@ -28,7 +28,7 @@ export async function getStaticProps ({ params }) {
 
 export async function getStaticPaths () {
   const response = await allUserWithId()
-
+  console.log(response)
   const paths = response.data.person.data.map(node => ({
     params: { id: node.id }
   }))
