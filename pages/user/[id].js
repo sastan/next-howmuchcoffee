@@ -1,33 +1,40 @@
 import Layout from 'components/layout'
 import userWithCoffee from 'lib/query/userWithCoffee'
+import allUserWithId from 'lib/query/allUserWithId'
 
 const User = ({ UserData }) => {
   console.log(UserData)
 
   return (
     <Layout>
-      Email <span>{UserData.email}</span>
+      <p>Userpage</p>
+      <p>
+        Email <span>{UserData.email}</span>
+      </p>
+      <p>
+        Age <span>{UserData.age}</span>
+      </p>
     </Layout>
   )
 }
 
 export async function getStaticProps ({ params }) {
-  const UserData = await userWithCoffee('283193827121955335')
+  console.log(params.id)
+  const UserData = await userWithCoffee('284074104427905537')
   return {
     props: { UserData }
   }
 }
 
 export async function getStaticPaths () {
-  const res = await fetch('http://localhost:3000/api/slug')
-  const slugs = await res.json()
+  const response = await allUserWithId()
 
-  const paths = slugs.data.person.data.map(node => ({
-    params: { slug: node.slug, id: node._id }
+  const paths = response.data.person.data.map(node => ({
+    params: { id: node.id }
   }))
   return {
     paths,
-    fallback: 'blocking'
+    fallback: true
   }
 }
 
