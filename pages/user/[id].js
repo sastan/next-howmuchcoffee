@@ -1,6 +1,6 @@
 import Layout from 'components/layout'
-import userWithCoffee from 'lib/query/userWithCoffee'
-import allUserWithId from 'lib/query/allUserWithId'
+import UserCoffees from '@query'
+import UsersID from '@query'
 
 const User = ({ UserData }) => {
   console.log(UserData)
@@ -18,23 +18,23 @@ const User = ({ UserData }) => {
   )
 }
 
-export async function getStaticProps ({ params }) {
+export async function getStaticProps({ params }) {
   console.log(params.id)
-  const UserData = await userWithCoffee('284074104427905537')
+  const UserData = await UserCoffees('284074104427905537')
   return {
-    props: { UserData }
+    props: { UserData },
   }
 }
 
-export async function getStaticPaths () {
-  const response = await allUserWithId()
+export async function getStaticPaths() {
+  const response = await UsersID()
   console.log(response)
-  const paths = response.data.person.data.map(node => ({
-    params: { id: node.id }
+  const paths = response.data.person.data.map((node) => ({
+    params: { id: node.id },
   }))
   return {
     paths,
-    fallback: true
+    fallback: true,
   }
 }
 

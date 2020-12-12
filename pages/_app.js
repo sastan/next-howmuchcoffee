@@ -1,15 +1,25 @@
-import '../css/index.css'
-import { createClient, Provider, defaultExchanges } from 'urql'
-import client from '@client'
 import Head from 'next/head'
-function MyApp ({ Component, pageProps }) {
+import { ReactQueryCacheProvider } from 'react-query'
+
+import { Hydrate } from 'react-query/hydration'
+import { ReactQueryDevtools } from 'react-query-devtools'
+
+import '../css/index.css'
+
+function MyApp({ Component, pageProps }) {
   return (
-    <Provider value={client}>
-      <Head>
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-      </Head>
-      <Component {...pageProps} />
-    </Provider>
+    <ReactQueryCacheProvider>
+      <Hydrate state={pageProps.dehydratedState}>
+        <Head>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
+        <Component {...pageProps} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </Hydrate>
+    </ReactQueryCacheProvider>
   )
 }
 

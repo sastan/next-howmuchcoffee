@@ -22,7 +22,6 @@
   "license": "MIT",
   "homepage": "https://howmuchcoffee.mozart409.space",
   "dependencies": {
-    "@urql/devtools": "^2.0.2",
     "classnames": "^2.2.6",
     "faunadb": "^4.0.0",
     "graphql": "^15.4.0",
@@ -34,8 +33,7 @@
     "react-dom": "17.0.1",
     "react-is": "^17.0.1",
     "react-query": "^2.26.4",
-    "react-query-devtools": "^2.6.3",
-    "urql": "^1.11.4"
+    "react-query-devtools": "^2.6.3"
   },
   "devDependencies": {
     "rustywind": "0.7.0",
