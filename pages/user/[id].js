@@ -3,8 +3,6 @@ import UserCoffees from '@query'
 import UsersID from '@query'
 
 const User = ({ UserData }) => {
-  console.log(UserData)
-
   return (
     <Layout>
       <p>Userpage</p>
