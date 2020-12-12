@@ -1,4 +1,4 @@
-import Layout from 'components/layout'
+import Layout from '@components'
 import UserCoffees from '@query'
 import UsersID from '@query'
 

@@ -1,5 +1,5 @@
-import Header from "./header";
-import Footer from "./footer";
+import Header from './Header'
+import Footer from './Footer'
 
 function Layout(props) {
   return (
@@ -10,7 +10,7 @@ function Layout(props) {
       </main>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default Layout;
+export default Layout
