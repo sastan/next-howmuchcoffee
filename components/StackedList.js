@@ -22,11 +22,10 @@ const StackedList = () => {
   )
   if (isLoading) return <div>Loading ...</div>
   if (isError) return <div>failed to load</div>
-
+  const UserData = data.person.data
   return (
     <div className="overflow-hidden bg-white shadow sm:rounded-md">
-      {console.log(data)}
-      {/*     <ul className="divide-y divide-gray-200">
+      <ul className="divide-y divide-gray-200">
         {UserData &&
           UserData.map((node) => (
             <li key={node._id}>
@@ -108,7 +107,6 @@ const StackedList = () => {
             </li>
           ))}
       </ul>
-  */}{' '}
     </div>
   )
 }
