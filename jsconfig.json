@@ -2,10 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@gqlClient": ["lib/gqlClient.js"],
-      "@lib/*": ["lib"],
-      "@query": ["lib/query/index.js"],
-      "@components": ["components/*"]
+      "@utils/*": ["utils"],
+
+      "@components": ["components/index.js"]
     }
   }
 }

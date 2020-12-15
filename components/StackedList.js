@@ -1,8 +1,32 @@
-const StackedList = (props) => {
-  const UserData = props.data
+import useSWR from 'swr'
+import { gql } from 'graphql-request'
+import { graphQLClient } from '../utils/graphql-client'
+
+const fetcher = async (query) => await graphQLClient.request(query)
+const StackedList = () => {
+  const { data, isLoading, isError } = useSWR(
+    gql`
+      query getAllUsers {
+        person {
+          data {
+            name
+            age
+            email
+            slug
+            _id
+          }
+        }
+      }
+    `,
+    fetcher
+  )
+  if (isLoading) return <div>Loading ...</div>
+  if (isError) return <div>failed to load</div>
+
   return (
     <div className="overflow-hidden bg-white shadow sm:rounded-md">
-      <ul className="divide-y divide-gray-200">
+      {console.log(data)}
+      {/*     <ul className="divide-y divide-gray-200">
         {UserData &&
           UserData.map((node) => (
             <li key={node._id}>
@@ -84,6 +108,7 @@ const StackedList = (props) => {
             </li>
           ))}
       </ul>
+  */}{' '}
     </div>
   )
 }
