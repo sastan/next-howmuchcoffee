@@ -1,4 +1,4 @@
-import { GraphQLClient, gql } from 'graphql-request'
+import { GraphQLClient } from 'graphql-request'
 
 const endpoint = 'https://graphql.fauna.com/graphql'
 

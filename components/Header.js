@@ -5,7 +5,7 @@ function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
 
   return (
-    <header className="bg-teal-500">
+    <header>
       <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:flex-no-wrap md:p-8">
         <div className="flex items-center">
           <img
