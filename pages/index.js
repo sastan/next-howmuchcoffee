@@ -5,7 +5,7 @@ import { graphQLClient } from '../utils/graphql-client'
 import { StackedList, PageHeading } from '@components'
 
 const fetcher = async (query) => await graphQLClient.request(query)
-const Index = () => {
+const Index = (props) => {
   const { data, isLoading, isError } = useSWR(
     gql`
       query getAllUsers {
@@ -20,7 +20,8 @@ const Index = () => {
         }
       }
     `,
-    fetcher
+    fetcher,
+    { initialData: props.getAllUsers }
   )
   if (isLoading) return <div>Loading ...</div>
   if (isError) return <div>failed to load</div>
@@ -32,6 +33,25 @@ const Index = () => {
       </div>
     </div>
   )
+}
+
+export async function getStaticProps({ params }) {
+  const getAllUsers = await fetcher(gql`
+    query getAllUsers {
+      person {
+        data {
+          name
+          age
+          email
+          slug
+          _id
+        }
+      }
+    }
+  `)
+  return {
+    props: { getAllUsers },
+  }
 }
 
 export default Index
