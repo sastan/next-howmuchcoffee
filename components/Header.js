@@ -1,36 +1,36 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-function Header () {
+function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
 
   return (
     <header>
-      <div className='flex flex-wrap justify-between items-center p-4 mx-auto max-w-4xl md:flex-no-wrap md:p-8'>
-        <div className='flex items-center'>
+      <div className="flex flex-wrap justify-between items-center p-4 mx-auto max-w-4xl md:flex-no-wrap md:p-8">
+        <div className="flex items-center">
           <img
-            src='https://nextjs.org/static/favicon/apple-touch-icon.png'
-            className='mr-3 w-10 text-white rounded'
+            src="https://nextjs.org/static/favicon/apple-touch-icon.png"
+            className="mr-3 w-10 text-gray-800 rounded"
           />
 
-          <Link href='/'>
-            <a className='text-xl font-bold text-black'>
+          <Link href="/">
+            <a className="text-xl font-bold text-black">
               Next.js Starter Tailwind
             </a>
           </Link>
         </div>
 
         <button
-          className='flex items-center py-2 px-3 text-white rounded border border-white md:hidden'
+          className="flex items-center py-2 px-3 text-gray-800 rounded border border-gray-800 md:hidden"
           onClick={() => toggleExpansion(!isExpanded)}
         >
           <svg
-            className='w-3 h-3 fill-current'
-            viewBox='0 0 20 20'
-            xmlns='http://www.w3.org/2000/svg'
+            className="w-3 h-3 fill-current"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <title>Menu</title>
-            <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z' />
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
           </svg>
         </button>
 
@@ -41,11 +41,11 @@ function Header () {
         >
           {[
             { title: 'Home', route: '/' },
-            { title: 'About', route: '/about' }
-          ].map(navigationItem => (
-            <li className='mt-3 md:mt-0 md:ml-6' key={navigationItem.title}>
+            { title: 'About', route: '/about' },
+          ].map((navigationItem) => (
+            <li className="mt-3 md:mt-0 md:ml-6" key={navigationItem.title}>
               <Link href={navigationItem.route}>
-                <a className='block text-white'>{navigationItem.title}</a>
+                <a className="block text-gray-800">{navigationItem.title}</a>
               </Link>
             </li>
           ))}
