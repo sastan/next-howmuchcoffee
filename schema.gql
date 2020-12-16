@@ -6,7 +6,7 @@ type Coffee {
 
 type Person {
   name: String!
-  slug: String
+  slug: String!
   age: Int!
   email: String!
   avatar: String
@@ -15,5 +15,5 @@ type Person {
 
 type Query {
   person: [Person]
-  personBySlug: [Person] @index(name: "person_by_slug")
+  getPersonBySlug(slug: String!): Person!
 }
