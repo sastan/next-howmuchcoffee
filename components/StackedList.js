@@ -11,7 +11,7 @@ const StackedList = () => {
           data {
             name
             age
-            email
+
             slug
             _id
           }
@@ -39,7 +39,7 @@ const StackedList = () => {
                           node.avatar ||
                           'https://images.unsplash.com/photo-1534342357876-491359270a66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
                         }
-                        alt={node.email}
+                        alt={node.name}
                       />
                     </div>
                     <div className="flex-1 min-w-0 px-4 md:grid md:grid-cols-2 md:gap-4">
@@ -58,7 +58,7 @@ const StackedList = () => {
                             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                           </svg>
-                          <span className="truncate">{node.email}</span>
+                          <span className="truncate">{node.name}</span>
                         </p>
                       </div>
                       <div className="hidden md:block">

@@ -13,7 +13,7 @@ const Index = (props) => {
           data {
             name
             age
-            email
+
             slug
             _id
           }
@@ -42,7 +42,7 @@ export async function getStaticProps() {
         data {
           name
           age
-          email
+
           slug
           _id
         }

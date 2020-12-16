@@ -12,7 +12,7 @@ const User = ({ UserSlug }) => {
     query UserBySlug($slug: String!) {
       getPersonBySlug(slug: $slug) {
         name
-        email
+
         age
         coffees {
           data {
@@ -29,7 +29,7 @@ const User = ({ UserSlug }) => {
     query UserById($id: ID!) {
       findPersonByID(id: $id) {
         name
-        email
+
         age
         coffees {
           data {
@@ -49,7 +49,7 @@ const User = ({ UserSlug }) => {
       {console.log(UserData)}
       {console.log('Error ' + isError)}
       <p>
-        Email <span>{UserData.email}</span>
+        Name <span>{UserData.name}</span>
       </p>
       <p>
         Age <span>{UserData.age}</span>
@@ -65,7 +65,7 @@ export async function getStaticProps({ params }) {
     query UserBySlug($slug: String!) {
       getPersonBySlug(slug: $slug) {
         name
-        email
+        
         age
         coffees {
           data {
