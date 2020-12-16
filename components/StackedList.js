@@ -1,8 +1,8 @@
 import useSWR from 'swr'
 import { gql } from 'graphql-request'
-import { graphQLClient } from '../utils/graphql-client'
+import { faundaGQLClient } from '../utils/faundaGQLClient'
 
-const fetcher = async (query) => await graphQLClient.request(query)
+const fetcher = async (query) => await faundaGQLClient.request(query)
 const StackedList = () => {
   const { data, isLoading, isError } = useSWR(
     gql`
@@ -22,14 +22,14 @@ const StackedList = () => {
   )
   if (isLoading) return <div>Loading ...</div>
   if (isError) return <div>failed to load</div>
-  const UserData = data.person.data
+
   return (
     <div className="overflow-hidden bg-white shadow sm:rounded-md">
       <ul className="divide-y divide-gray-200">
-        {UserData &&
-          UserData.map((node) => (
+        {data &&
+          data.person.data.map((node) => (
             <li key={node._id}>
-              <a href={`/user/${node.slug}`} className="block hover:bg-gray-50">
+              <a href={node.slug} className="block hover:bg-gray-50">
                 <div className="flex items-center px-4 py-4 sm:px-6">
                   <div className="flex items-center flex-1 min-w-0">
                     <div className="flex-shrink-0">

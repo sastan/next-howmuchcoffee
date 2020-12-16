@@ -1,10 +1,10 @@
 import useSWR from 'swr'
 import { gql } from 'graphql-request'
-import { graphQLClient } from '../utils/graphql-client'
+import { faundaGQLClient } from '../utils/faundaGQLClient'
 
 import { StackedList, PageHeading } from '@components'
 
-const fetcher = async (query) => await graphQLClient.request(query)
+const fetcher = async (query) => await faundaGQLClient.request(query)
 const Index = (props) => {
   const { data, isLoading, isError } = useSWR(
     gql`
@@ -27,7 +27,7 @@ const Index = (props) => {
   if (isError) return <div>failed to load</div>
   return (
     <div>
-      <PageHeading title="Home Page" subtitle="Test" />
+      <PageHeading title="Home Page" subtitle="" />
       <div className="overflow-hidden bg-white shadow sm:rounded-md">
         <StackedList />
       </div>
@@ -35,7 +35,7 @@ const Index = (props) => {
   )
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const getAllUsers = await fetcher(gql`
     query getAllUsers {
       person {
