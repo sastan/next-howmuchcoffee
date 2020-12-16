@@ -4,6 +4,25 @@ import { faundaGQLClient } from '../utils/faundaGQLClient'
 import { StackedList, PageHeading } from '@components'
 const fetcher = async (query) => await faundaGQLClient.request(query)
 const User = ({ UserData }) => {
+  const { data, isLoading, isError } = useSWR(
+    gql`
+      query UserById($id: ID!) {
+        findPersonByID(id: $id) {
+          name
+          email
+          age
+          coffees {
+            data {
+              _id
+              amount
+              notes
+            }
+          }
+        }
+      }
+    `,
+    fetcher
+  )
   return (
     <div>
       <PageHeading title="Userpage" />
