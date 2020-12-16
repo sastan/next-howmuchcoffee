@@ -1,9 +1,12 @@
 # Next.js Starter Tailwind
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![alt text](https://github.com/taylorbryant/next-starter-tailwind/blob/master/public/screenshot.png "Screenshot of Tailwind Next.js Starter homepage")
+![alt text](https://github.com/taylorbryant/next-starter-tailwind/blob/master/public/screenshot.png 'Screenshot of Tailwind Next.js Starter homepage')
 
  <div align="center">
  <p><strong>A <a href="https://nextjs.org" target="_blank">Next.js</a> starter styled using <a href="https://tailwindcss.com/" target="_blank">Tailwind</a>, a utility-first CSS framework.</strong></p>
@@ -15,9 +18,11 @@
 ## Deploy
 
 ### Netlify
+
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/taylorbryant/next-starter-tailwind)
 
 ### Vercel (FKA ZEIT Now)
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Ftaylorbryant%2Fnext-starter-tailwind%2Ftree%2Fmaster)
 
 ## License
@@ -47,6 +52,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

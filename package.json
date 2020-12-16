@@ -7,11 +7,12 @@
     "analyze:tailwind-css-class-order": "rustywind --dry-run .",
     "analyze": "yarn run analyze:tailwind-css-class-order",
     "fix:tailwind-css-class-order": "rustywind --write .",
-    "fix": "yarn run fix:tailwind-css-class-order",
+    "fix": "yarn run fix:tailwind-css-class-order && echo && yarn run format",
     "dev": "next",
     "build": "next build",
     "export": "yarn run build && next export",
     "start": "next start",
+    "format": "prettier-standard --format",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +34,7 @@
     "swr": "^0.3.9"
   },
   "devDependencies": {
+    "prettier-standard": "^16.4.1",
     "rustywind": "0.7.0",
     "tailwindcss": "2.0.2"
   }
