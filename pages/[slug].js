@@ -2,43 +2,30 @@ import useSWR from 'swr'
 import { gql } from 'graphql-request'
 import { faundaGQLClient } from '../utils/faundaGQLClient'
 import { StackedList, PageHeading } from '@components'
-const fetcher = async (query) => await faundaGQLClient.request(query)
-const User = ({ UserData }) => {
-  const { data, isLoading, isError } = useSWR(
-    gql`
-      query UserById($id: ID!) {
-        findPersonByID(id: $id) {
-          name
-          email
-          age
-          coffees {
-            data {
-              _id
-              amount
-              notes
-            }
+
+const fetcher = async (query, id) =>
+  await faundaGQLClient.request(query, { id })
+
+const User = () => {
+  const UserSlug = 'amadeus'
+  const UserBySlug = gql`
+    query UserBySlug($slug: String!) {
+      getPersonBySlug(slug: $slug) {
+        name
+        email
+        age
+        coffees {
+          data {
+            _id
+            amount
+            notes
           }
         }
       }
-    `,
-    fetcher
-  )
-  return (
-    <div>
-      <PageHeading title="Userpage" />
-
-      {/* <p>
-        Email <span>{UserData.email}</span>
-      </p>
-      <p>
-        Age <span>{UserData.age}</span>
-      </p> */}
-    </div>
-  )
-}
-
-export async function getStaticProps({ params }) {
-  /*   const UserById = await fetcher(gql`
+    }
+  `
+  const UserID = '283193827121955335'
+  const UserById = gql`
     query UserById($id: ID!) {
       findPersonByID(id: $id) {
         name
@@ -53,9 +40,46 @@ export async function getStaticProps({ params }) {
         }
       }
     }
+  `
+  const { data, isLoading, isError } = useSWR([UserById, UserID], fetcher)
+  /* const UserData = data.getPersonBySlug */
+  return (
+    <div>
+      <PageHeading title="Userpage" />
+      {console.log(data)}
+      {console.log('Error ' + isError)}
+      {/*  <p>
+        Email <span>{UserData.email}</span>
+      </p>
+      <p>
+        Age <span>{UserData.age}</span>
+      </p> */}
+    </div>
+  )
+}
+
+export async function getStaticProps({ params }) {
+  const UserSlug = params.slug
+  console.log('Params ' + params)
+  /* const UserBySlug = await fetcher(gql`
+    query UserBySlug($slug: String!) {
+      getPersonBySlug(slug: $slug) {
+        name
+        email
+        age
+        coffees {
+          data {
+            _id
+            amount
+            notes
+          }
+        }
+      }
+    },
+    UserSlug
   `) */
   return {
-    props: {},
+    props: { UserSlug },
   }
 }
 
@@ -71,7 +95,7 @@ export async function getStaticPaths() {
   `)
   return {
     paths: allUsersPaths.person.data.map((node) => `/${node.slug}`),
-    fallback: true,
+    fallback: false,
   }
 }
 
