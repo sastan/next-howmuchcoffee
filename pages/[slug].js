@@ -3,11 +3,11 @@ import { gql } from 'graphql-request'
 import { faundaGQLClient } from '../utils/faundaGQLClient'
 import { StackedList, PageHeading } from '@components'
 
-const fetcher = async (query, id) =>
-  await faundaGQLClient.request(query, { id })
+const fetcher = async (query, slug) =>
+  await faundaGQLClient.request(query, { slug })
 
-const User = () => {
-  const UserSlug = 'amadeus'
+const User = ({ UserSlug }) => {
+  /* const UserSlug = 'amadeus' */
   const UserBySlug = gql`
     query UserBySlug($slug: String!) {
       getPersonBySlug(slug: $slug) {
@@ -41,19 +41,19 @@ const User = () => {
       }
     }
   `
-  const { data, isLoading, isError } = useSWR([UserById, UserID], fetcher)
-  /* const UserData = data.getPersonBySlug */
+  const { data, isLoading, isError } = useSWR([UserBySlug, UserSlug], fetcher)
+  const UserData = data.getPersonBySlug
   return (
     <div>
       <PageHeading title="Userpage" />
-      {console.log(data)}
+      {console.log(UserData)}
       {console.log('Error ' + isError)}
-      {/*  <p>
+      <p>
         Email <span>{UserData.email}</span>
       </p>
       <p>
         Age <span>{UserData.age}</span>
-      </p> */}
+      </p>
     </div>
   )
 }
