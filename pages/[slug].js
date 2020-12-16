@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import { gql } from 'graphql-request'
 import { faundaGQLClient } from '../utils/faundaGQLClient'
-import { StackedList, PageHeading, CoffeList } from '@components'
+import { StackedList, PageHeading, CoffeeList } from '@components'
 
 const fetcher = async (query, slug) =>
   await faundaGQLClient.request(query, { slug })
@@ -36,7 +36,7 @@ const User = ({ UserBySlug }) => {
       <p>
         Name <span>{data.getPersonBySlug.name}</span>
       </p>
-      <CoffeList data={data.getPersonBySlug} />
+      <CoffeeList data={data.getPersonBySlug.coffees.data} />
     </div>
   )
 }
@@ -55,6 +55,7 @@ export async function getStaticProps({ params }) {
               _id
               amount
               notes
+              extras
             }
           }
         }

@@ -1,6 +1,7 @@
 type Coffee {
   amount: String!
   notes: String
+  extras: String
   person: Person
 }
 

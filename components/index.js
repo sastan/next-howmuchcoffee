@@ -1,9 +1,9 @@
 import PageHeading from './PageHeading'
 import StackedList from './StackedList'
-import CoffeList from './CoffeList'
+import CoffeeList from './CoffeeList'
 
 module.exports = {
   PageHeading,
   StackedList,
-  CoffeList
+  CoffeeList,
 }
