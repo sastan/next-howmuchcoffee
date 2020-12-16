@@ -15,4 +15,5 @@ type Person {
 
 type Query {
   person: [Person]
+  personBySlug: [Person] @index(name: "person_by_slug")
 }
