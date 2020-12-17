@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { useState } from 'react'
-import { ThemeToggle } from '@components'
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
@@ -11,18 +10,18 @@ function Header() {
         <div className="flex items-center">
           <img
             src="https://nextjs.org/static/favicon/apple-touch-icon.png"
-            className="mr-3 w-10 text-gray-800 rounded"
+            className="mr-3 w-10 text-yellow-custom rounded"
           />
 
           <Link href="/">
-            <a className="text-xl font-bold text-black">
-              Next.js Starter Tailwind
+            <a className="text-xl font-light text-gray-600 dark:text-gray-300">
+              How Much Coffee
             </a>
           </Link>
         </div>
 
         <button
-          className="flex items-center py-2 px-3 text-gray-800 rounded border border-gray-800 md:hidden"
+          className="flex items-center py-2 px-3 text-yellow-custom rounded border border-gray-800 md:hidden"
           onClick={() => toggleExpansion(!isExpanded)}
         >
           <svg
@@ -35,7 +34,7 @@ function Header() {
           </svg>
         </button>
 
-        <ul
+        {/* <ul
           className={`${
             isExpanded ? `block` : `hidden`
           } md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto`}
@@ -46,14 +45,13 @@ function Header() {
           ].map((navigationItem) => (
             <li className="mt-3 md:mt-0 md:ml-6" key={navigationItem.title}>
               <Link href={navigationItem.route}>
-                <a className="block text-gray-800">{navigationItem.title}</a>
+                <a className="block text-yellow-custom">
+                  {navigationItem.title}
+                </a>
               </Link>
             </li>
           ))}
-          <div className="mt-3 md:mt-0 md:ml-6">
-            <ThemeToggle />
-          </div>
-        </ul>
+        </ul> */}
       </div>
     </header>
   )

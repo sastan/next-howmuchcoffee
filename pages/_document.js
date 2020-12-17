@@ -27,7 +27,7 @@ class MyDocument extends Document {
         </Head>
 
         <body>
-          <div className="bg-white text-black dark:bg-black dark:text-white">
+          <div>
             <Layout>
               <Main />
             </Layout>

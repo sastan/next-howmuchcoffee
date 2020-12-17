@@ -7,11 +7,14 @@ function PageHeading(props) {
       <Head>
         <title>{props.title}</title>
       </Head>
-      <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0 mb-6">
         <h1
           className={cx(
-            'text-2xl font-bold leading-7 mt-4 text-gray-900 sm:text-3xl sm:leading-9',
-            { 'text-gray-900 underline': props.underline }
+            'text-2xl font-bold leading-7 mt-4 text-gray-900 dark:text-yellow-custom sm:text-3xl sm:leading-9',
+            {
+              'text-gray-900 dark:text-yellow-custom underline':
+                props.underline,
+            }
           )}
         >
           {props.title}

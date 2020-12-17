@@ -1,6 +1,6 @@
 module.exports = {
   purge: ['./components/**/*.js', './pages/**/*.js'],
-  darkMode: 'class',
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {
@@ -16,6 +16,11 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      ringWidth: ['hover', 'active'],
+      ringColor: ['hover', 'active'],
+    },
+  },
   plugins: [],
 }

@@ -13,7 +13,6 @@ const Index = (props) => {
           data {
             name
             age
-
             slug
             _id
           }

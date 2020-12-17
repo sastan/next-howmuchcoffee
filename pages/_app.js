@@ -6,10 +6,7 @@ import '../css/index.css'
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <ThemeProvider
-        forcedTheme={Component.theme || undefined}
-        attribute="class"
-      >
+      <ThemeProvider attribute="class">
         <Head>
           <meta
             name="viewport"

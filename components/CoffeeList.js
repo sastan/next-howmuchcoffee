@@ -7,7 +7,7 @@ export default function CoffeeList(props) {
           props.data.map((node) => (
             <li
               key={node._id}
-              className="col-span-1 bg-white rounded-lg divide-y divide-gray-200 shadow-2xl"
+              className="col-span-1 bg-white rounded-lg divide-y divide-gray-200 shadow-2xl hover:ring-4 hover:ring-red-custom duration-150"
             >
               <div className="flex justify-between items-center p-6 space-x-6 w-full">
                 <div className="flex-1 truncate">

@@ -6,7 +6,7 @@ import { StackedList, PageHeading, CoffeeList } from '@components'
 const fetcher = async (query, slug) =>
   await faundaGQLClient.request(query, { slug })
 
-const User = ({ UserBySlug }) => {
+const User = ({ UserBySlugData }) => {
   /*   const UserBySlug = gql`
     query UserBySlug($slug: String!) {
       getPersonBySlug(slug: $slug) {
@@ -28,14 +28,11 @@ const User = ({ UserBySlug }) => {
   /*  if (isError) return <div>Error {isError}</div>
   if (isLoading) return <div>Loading ...</div> */
 
-  const data = UserBySlug
+  const data = UserBySlugData
   return (
     <div>
       <PageHeading title={`${data.getPersonBySlug.name} Page`} />
 
-      <p>
-        Name <span>{data.getPersonBySlug.name}</span>
-      </p>
       <CoffeeList data={data.getPersonBySlug.coffees.data} />
     </div>
   )
@@ -44,7 +41,7 @@ const User = ({ UserBySlug }) => {
 export async function getStaticProps({ params }) {
   const UserSlug = params.slug
 
-  const UserBySlug = await fetcher(
+  const UserBySlugData = await fetcher(
     gql`
       query UserBySlug($slug: String!) {
         getPersonBySlug(slug: $slug) {
@@ -64,7 +61,7 @@ export async function getStaticProps({ params }) {
     UserSlug
   )
   return {
-    props: { UserBySlug },
+    props: { UserBySlugData },
     revalidate: 1,
   }
 }
