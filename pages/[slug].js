@@ -43,7 +43,7 @@ const User = ({ UserBySlug }) => {
 
 export async function getStaticProps({ params }) {
   const UserSlug = params.slug
-  console.log('Params ' + params.slug)
+
   const UserBySlug = await fetcher(
     gql`
       query UserBySlug($slug: String!) {

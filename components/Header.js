@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useState } from 'react'
+import { ThemeToggle } from '@components'
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
@@ -49,6 +50,9 @@ function Header() {
               </Link>
             </li>
           ))}
+          <div className="mt-3 md:mt-0 md:ml-6">
+            <ThemeToggle />
+          </div>
         </ul>
       </div>
     </header>

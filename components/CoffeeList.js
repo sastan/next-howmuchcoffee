@@ -1,9 +1,6 @@
-import React from 'react'
-
 export default function CoffeeList(props) {
   return (
     <div>
-      {console.log(props.data)}
       {/* <!-- This example requires Tailwind CSS v2.0+ --> */}
       <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {props.data &&
