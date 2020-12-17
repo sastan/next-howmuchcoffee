@@ -65,6 +65,7 @@ export async function getStaticProps({ params }) {
   )
   return {
     props: { UserBySlug },
+    revalidate: 60,
   }
 }
 

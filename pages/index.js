@@ -4,8 +4,8 @@ import { faundaGQLClient } from '../utils/faundaGQLClient'
 
 import { StackedList, PageHeading } from '@components'
 
-const fetcher = async query => await faundaGQLClient.request(query)
-const Index = props => {
+const fetcher = async (query) => await faundaGQLClient.request(query)
+const Index = (props) => {
   const { data, isLoading, isError } = useSWR(
     gql`
       query getAllUsers {
@@ -27,15 +27,15 @@ const Index = props => {
   if (isError) return <div>failed to load</div>
   return (
     <div>
-      <PageHeading title='Home Page' subtitle='' />
-      <div className='overflow-hidden bg-white shadow sm:rounded-md'>
+      <PageHeading title="Home Page" subtitle="" />
+      <div className="overflow-hidden bg-white shadow sm:rounded-md">
         <StackedList />
       </div>
     </div>
   )
 }
 
-export async function getStaticProps () {
+export async function getStaticProps() {
   const getAllUsers = await fetcher(gql`
     query getAllUsers {
       person {
@@ -50,7 +50,8 @@ export async function getStaticProps () {
     }
   `)
   return {
-    props: { getAllUsers }
+    props: { getAllUsers },
+    revalidate: 60,
   }
 }
 
