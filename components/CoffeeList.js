@@ -15,9 +15,11 @@ export default function CoffeeList(props) {
                     <h3 className="text-sm font-medium text-gray-900 truncate">
                       {node.amount} Liter
                     </h3>
-                    <span className="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">
-                      {node.extras}
-                    </span>
+                    {node.extras && (
+                      <span className="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">
+                        {node.extras}
+                      </span>
+                    )}
                   </div>
                   <p className="mt-1 text-sm text-gray-500 truncate">
                     {node.notes}
