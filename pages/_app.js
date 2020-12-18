@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps, router }) {
                 name="viewport"
                 content="initial-scale=1.0, width=device-width"
               />
+              <script async data-api="/_hive" src="/bee.js"></script>
             </Head>
             <Component {...pageProps} key={router.route} />
           </ThemeProvider>
