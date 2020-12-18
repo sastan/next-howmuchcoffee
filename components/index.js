@@ -6,5 +6,5 @@ module.exports = {
   PageHeading,
   StackedList,
   CoffeeList,
-  ThemeToggle,
+  ThemeToggle
 }

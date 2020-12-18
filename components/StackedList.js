@@ -2,6 +2,7 @@ import useSWR from 'swr'
 import { gql } from 'graphql-request'
 import { faundaGQLClient } from '../utils/faundaGQLClient'
 import { fromUnixTime } from 'date-fns'
+import { motion } from 'framer-motion'
 
 const fetcher = async (query) => await faundaGQLClient.request(query)
 
@@ -26,12 +27,12 @@ const StackedList = ({ getAllUsersData }) => {
   if (isError) return <div>failed to load</div>
 
   return (
-    <div className="border-gray-200 dark:border-yellow-custom border">
-      <div className="overflow-hidden bg-white dark:bg-gray-700  rounded">
+    <div className="border border-gray-200 dark:border-yellow-custom">
+      <div className="overflow-hidden bg-white rounded dark:bg-gray-700 ">
         <ul className="divide-y divide-gray-200 dark:divide-yellow-custom">
           {data &&
             data.person.data.map((node) => (
-              <li key={node._id}>
+              <motion.li whileHover={{ scale: 1.01 }} key={node._id}>
                 <a
                   href={node.slug}
                   className="block hover:bg-gray-50 dark:hover:bg-gray-600"
@@ -76,7 +77,7 @@ const StackedList = ({ getAllUsersData }) => {
                     </div>
                   </div>
                 </a>
-              </li>
+              </motion.li>
             ))}
         </ul>
       </div>

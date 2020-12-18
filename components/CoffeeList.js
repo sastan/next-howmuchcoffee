@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 export default function CoffeeList(props) {
   return (
     <div>
@@ -5,9 +6,14 @@ export default function CoffeeList(props) {
       <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {props.data &&
           props.data.map((node) => (
-            <li
+            <motion.li
+              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 200 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 200 }}
+              whileHover={{ scale: 1.01 }}
               key={node._id}
-              className="col-span-1 bg-white rounded-lg divide-y divide-gray-200 shadow-2xl hover:ring-4 hover:ring-red-custom duration-150"
+              className="col-span-1 bg-white rounded-lg divide-y divide-gray-200 shadow-2xl duration-150 hover:ring-2 hover:ring-red-custom"
             >
               <div className="flex justify-between items-center p-6 space-x-6 w-full">
                 <div className="flex-1 truncate">
@@ -31,7 +37,7 @@ export default function CoffeeList(props) {
                   alt=""
                 /> */}
               </div>
-            </li>
+            </motion.li>
           ))}{' '}
       </ul>
     </div>
