@@ -11,12 +11,12 @@ export default function CoffeeList(props) {
           props.data.map((node) => (
             <li
               key={node._id}
-              className="col-span-1 bg-white rounded-lg divide-y divide-gray-200 shadow-2xl duration-75 hover:ring-2 hover:ring-red-custom"
+              className="col-span-1 bg-white dark:bg-gray-700 rounded-lg divide-y divide-gray-200 shadow-2xl duration-75 hover:ring-2 hover:ring-red-custom"
             >
               <div className="flex justify-between items-center p-6 space-x-6 w-full">
                 <div className="flex-1 truncate">
                   <div className="flex items-center space-x-3">
-                    <h3 className="text-sm font-medium text-gray-900 truncate">
+                    <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-300 truncate">
                       {node.amount} Liter
                     </h3>
                     {node.extras && (
@@ -25,7 +25,7 @@ export default function CoffeeList(props) {
                       </span>
                     )}
                   </div>
-                  <p className="mt-1 text-sm text-gray-500 truncate">
+                  <p className="mt-1 text-sm font-medium text-gray-600 dark:text-yellow-custom truncate">
                     {node.notes}
                   </p>
                   <p className="mt-1 text-xs text-gray-400">

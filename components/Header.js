@@ -6,17 +6,17 @@ function Header() {
 
   return (
     <header>
-      <div className="flex flex-wrap justify-between items-center p-4 mx-auto max-w-4xl md:flex-no-wrap md:p-8">
+      <div className="standalone:fixed standalone:mt-6 flex flex-wrap justify-between items-center p-4 mx-auto max-w-4xl md:flex-no-wrap md:p-8">
         <div className="flex items-center">
           <img
-            src="https://nextjs.org/static/favicon/apple-touch-icon.png"
-            alt="Nextjs logo"
+            src="logo1.svg"
+            alt="logo"
             className="mr-3 w-10 rounded text-yellow-custom"
           />
 
           <Link href="/">
             <a className="text-xl font-light text-gray-600 dark:text-gray-300">
-              How Much Coffee
+              How Much Coffee?
             </a>
           </Link>
         </div>

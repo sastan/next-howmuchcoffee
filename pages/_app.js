@@ -6,7 +6,7 @@ import '../css/index.css'
 
 function MyApp({ Component, pageProps, router }) {
   return (
-    <div>
+    <div style={{ WebkitTapHighlightColor: 'transparent' }}>
       <Layout>
         <ThemeProvider attribute="class">
           <Head>

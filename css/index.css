@@ -1,12 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@media screen and (display-mode: standalone) {
-  header {
-    height: 80px !important;
-  }
-  * {
-    -webkit-tap-highlight-color: transparent;
-  }
-}
