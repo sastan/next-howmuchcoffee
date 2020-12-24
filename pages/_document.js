@@ -2,27 +2,27 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 import cx from 'classnames'
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps (ctx) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
 
-  render() {
+  render () {
     const darkMode = true
     return (
-      <Html lang="en">
+      <Html lang='en'>
         <Head>
           <link
-            rel="shortcut icon"
-            type="image/png"
-            sizes="16x16"
-            href="https://nextjs.org/static/favicon/favicon-16x16.png"
+            rel='shortcut icon'
+            type='image/png'
+            sizes='16x16'
+            href='https://nextjs.org/static/favicon/favicon-16x16.png'
           />
           <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="https://nextjs.org/static/favicon/favicon-16x16.png"
+            rel='icon'
+            type='image/png'
+            sizes='16x16'
+            href='https://nextjs.org/static/favicon/favicon-16x16.png'
           />
         </Head>
 

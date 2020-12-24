@@ -6,8 +6,8 @@ const l2rVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      ease: easing,
-    },
-  },
+      ease: easing
+    }
+  }
 }
 module.exports = { l2rVariants }

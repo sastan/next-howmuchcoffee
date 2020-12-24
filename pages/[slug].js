@@ -44,7 +44,7 @@ const User = ({ UserBySlugData }) => {
   )
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps ({ params }) {
   const UserSlug = params.slug
 
   const UserBySlugData = await fetcher(
@@ -69,11 +69,11 @@ export async function getStaticProps({ params }) {
   )
   return {
     props: { UserBySlugData },
-    revalidate: 3600,
+    revalidate: 3600
   }
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths () {
   const allUsersPaths = await fetcher(gql`
     query getAllUsersPaths {
       person {
@@ -84,8 +84,8 @@ export async function getStaticPaths() {
     }
   `)
   return {
-    paths: allUsersPaths.person.data.map((node) => `/${node.slug}`),
-    fallback: false,
+    paths: allUsersPaths.person.data.map(node => `/${node.slug}`),
+    fallback: false
   }
 }
 
