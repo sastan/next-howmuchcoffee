@@ -5,16 +5,14 @@ function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
 
   return (
-    <header>
-      <div className="flex flex-wrap justify-between items-center p-4 mx-auto max-w-4xl bg-gray-200 standalone:fixed standalone:mt-6 md:flex-no-wrap md:p-8 dark:bg-gray-custom">
+    <header className="w-full bg-gray-200 dark:bg-gray-custom">
+      <div className="flex flex-wrap justify-between items-center p-4 mx-auto max-w-4xl  standalone:fixed standalone:mt-6 md:flex-no-wrap md:p-8 ">
         <div className="flex items-center">
-          <div className="">
-            <img
-              src="logo1.svg"
-              alt="logo"
-              className="p-2 mr-3 w-10 bg-gray-800 rounded"
-            />
-          </div>
+          <img
+            src="logo1.svg"
+            alt="logo"
+            className="p-2 mr-3 w-10 bg-gray-800 rounded"
+          />
 
           <Link href="/">
             <a className="text-xl font-light text-gray-600 dark:text-gray-300">
