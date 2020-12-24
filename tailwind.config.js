@@ -5,25 +5,25 @@ module.exports = {
     extend: {
       colors: {
         gray: {
-          custom: '#242331'
+          custom: '#242331',
         },
         yellow: {
-          custom: '#edf060'
+          custom: '#edf060',
         },
         red: {
-          custom: '#ef233c'
-        }
+          custom: '#ef233c',
+        },
       },
       screens: {
-        standalone: { raw: '(display-mode:standalone)' }
-      }
-    }
+        standalone: { raw: '(display-mode:standalone)' },
+      },
+    },
   },
   variants: {
     extend: {
       ringWidth: ['hover', 'active'],
-      ringColor: ['hover', 'active']
-    }
+      ringColor: ['hover', 'active'],
+    },
   },
-  plugins: []
+  plugins: [],
 }
