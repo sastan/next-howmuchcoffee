@@ -10,6 +10,7 @@ function Header() {
         <div className="flex items-center">
           <img
             src="https://nextjs.org/static/favicon/apple-touch-icon.png"
+            alt="Nextjs logo"
             className="mr-3 w-10 rounded text-yellow-custom"
           />
 

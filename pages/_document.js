@@ -10,7 +10,7 @@ class MyDocument extends Document {
   render() {
     const darkMode = true
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <link
             rel="shortcut icon"
