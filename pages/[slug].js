@@ -1,10 +1,6 @@
-import useSWR from 'swr'
 import { gql } from 'graphql-request'
 import { faundaGQLClient } from '../utils/faundaGQLClient'
-import { StackedList, PageHeading, CoffeeList } from '@components'
-
-import { useEffect } from 'react'
-import { l2rVariants } from '../utils/animationVariants'
+import { PageHeading, CoffeeList } from '@components'
 
 const fetcher = async (query, slug) =>
   await faundaGQLClient.request(query, { slug })
@@ -31,12 +27,9 @@ const User = ({ UserBySlugData }) => {
   /*  if (isError) return <div>Error {isError}</div>
   if (isLoading) return <div>Loading ...</div> */
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
   const data = UserBySlugData
   return (
-    <div variants={l2rVariants}>
+    <div>
       <PageHeading title={`${data.getPersonBySlug.name} Page`} />
 
       <CoffeeList data={data.getPersonBySlug.coffees.data} />
@@ -44,7 +37,7 @@ const User = ({ UserBySlugData }) => {
   )
 }
 
-export async function getStaticProps ({ params }) {
+export async function getStaticProps({ params }) {
   const UserSlug = params.slug
 
   const UserBySlugData = await fetcher(
@@ -69,11 +62,11 @@ export async function getStaticProps ({ params }) {
   )
   return {
     props: { UserBySlugData },
-    revalidate: 3600
+    revalidate: 3600,
   }
 }
 
-export async function getStaticPaths () {
+export async function getStaticPaths() {
   const allUsersPaths = await fetcher(gql`
     query getAllUsersPaths {
       person {
@@ -84,8 +77,8 @@ export async function getStaticPaths () {
     }
   `)
   return {
-    paths: allUsersPaths.person.data.map(node => `/${node.slug}`),
-    fallback: false
+    paths: allUsersPaths.person.data.map((node) => `/${node.slug}`),
+    fallback: false,
   }
 }
 

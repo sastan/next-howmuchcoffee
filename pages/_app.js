@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps, router }) {
         <Head>
           <meta
             name="viewport"
-            content="initial-scale=1.0, width=device-width,viewport-fit=cover, user-scalable=no"
+            content="initial-scale=1.0, width=device-width,viewport-fit=cover"
           />
           <link rel="manifest" href="/site.webmanifest" />
 

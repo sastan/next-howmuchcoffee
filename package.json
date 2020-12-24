@@ -24,7 +24,6 @@
   "homepage": "https://howmuchcoffee.mozart409.space",
   "dependencies": {
     "@prefresh/next": "^1.4.4",
-    "classnames": "^2.2.6",
     "dayjs": "^1.9.7",
     "graphql": "^15.4.0",
     "graphql-request": "^3.4.0",
