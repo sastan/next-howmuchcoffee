@@ -2,7 +2,7 @@ import useSWR from 'swr'
 import { gql } from 'graphql-request'
 import { faundaGQLClient } from '../utils/faundaGQLClient'
 import { StackedList, PageHeading, CoffeeList } from '@components'
-import { motion } from 'framer-motion'
+
 import { useEffect } from 'react'
 import { l2rVariants } from '../utils/animationVariants'
 
@@ -36,11 +36,11 @@ const User = ({ UserBySlugData }) => {
   }, [])
   const data = UserBySlugData
   return (
-    <motion.div variants={l2rVariants}>
+    <div variants={l2rVariants}>
       <PageHeading title={`${data.getPersonBySlug.name} Page`} />
 
       <CoffeeList data={data.getPersonBySlug.coffees.data} />
-    </motion.div>
+    </div>
   )
 }
 

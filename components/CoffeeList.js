@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import dayjs from 'dayjs'
 const isToday = require('dayjs/plugin/isToday')
 
@@ -10,12 +9,7 @@ export default function CoffeeList(props) {
       <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {props.data &&
           props.data.map((node) => (
-            <motion.li
-              transition={{ duration: 0.05 }}
-              initial={{ opacity: 0, y: 200 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 200 }}
-              whileHover={{ scale: 1.01 }}
+            <li
               key={node._id}
               className="col-span-1 bg-white rounded-lg divide-y divide-gray-200 shadow-2xl duration-75 hover:ring-2 hover:ring-red-custom"
             >
@@ -46,7 +40,7 @@ export default function CoffeeList(props) {
                   alt=""
                 /> */}
               </div>
-            </motion.li>
+            </li>
           ))}{' '}
       </ul>
     </div>
