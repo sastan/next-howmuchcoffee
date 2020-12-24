@@ -8,11 +8,13 @@ function Header() {
     <header>
       <div className="standalone:fixed standalone:mt-6 flex flex-wrap justify-between items-center p-4 mx-auto max-w-4xl md:flex-no-wrap md:p-8">
         <div className="flex items-center">
-          <img
-            src="logo1.svg"
-            alt="logo"
-            className="mr-3 w-10 rounded text-yellow-custom"
-          />
+          <div className="">
+            <img
+              src="logo1.svg"
+              alt="logo"
+              className="mr-3 w-10 rounded bg-gray-800 p-2"
+            />
+          </div>
 
           <Link href="/">
             <a className="text-xl font-light text-gray-600 dark:text-gray-300">
