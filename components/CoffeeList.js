@@ -1,4 +1,8 @@
 import { motion } from 'framer-motion'
+import dayjs from 'dayjs'
+const isToday = require('dayjs/plugin/isToday')
+
+dayjs.extend(isToday)
 export default function CoffeeList(props) {
   return (
     <div>
@@ -7,13 +11,13 @@ export default function CoffeeList(props) {
         {props.data &&
           props.data.map((node) => (
             <motion.li
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.05 }}
               initial={{ opacity: 0, y: 200 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 200 }}
               whileHover={{ scale: 1.01 }}
               key={node._id}
-              className="col-span-1 bg-white rounded-lg divide-y divide-gray-200 shadow-2xl duration-150 hover:ring-2 hover:ring-red-custom"
+              className="col-span-1 bg-white rounded-lg divide-y divide-gray-200 shadow-2xl duration-75 hover:ring-2 hover:ring-red-custom"
             >
               <div className="flex justify-between items-center p-6 space-x-6 w-full">
                 <div className="flex-1 truncate">
@@ -29,6 +33,11 @@ export default function CoffeeList(props) {
                   </div>
                   <p className="mt-1 text-sm text-gray-500 truncate">
                     {node.notes}
+                  </p>
+                  <p className="mt-1 text-xs text-gray-400">
+                    {dayjs(node._ts).isToday()
+                      ? dayjs(node._ts / 1000).format('h:mm:s')
+                      : dayjs(node._ts / 1000).format('DD.MM.YYYY')}
                   </p>
                 </div>
                 {/* <img

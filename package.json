@@ -24,7 +24,7 @@
   "homepage": "https://howmuchcoffee.mozart409.space",
   "dependencies": {
     "classnames": "^2.2.6",
-    "date-fns": "^2.16.1",
+    "dayjs": "^1.9.7",
     "framer-motion": "^3.0.0",
     "graphql": "^15.4.0",
     "graphql-request": "^3.4.0",
@@ -33,7 +33,6 @@
     "postcss": "^8.2.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-is": "^17.0.1",
     "swr": "^0.3.9"
   },
   "devDependencies": {

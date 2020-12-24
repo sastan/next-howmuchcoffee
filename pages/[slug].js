@@ -56,6 +56,7 @@ export async function getStaticProps({ params }) {
           coffees {
             data {
               _id
+              _ts
               amount
               notes
               extras
@@ -68,7 +69,7 @@ export async function getStaticProps({ params }) {
   )
   return {
     props: { UserBySlugData },
-    revalidate: 1,
+    revalidate: 3600,
   }
 }
 

@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import { gql } from 'graphql-request'
 import { faundaGQLClient } from '../utils/faundaGQLClient'
-import { fromUnixTime } from 'date-fns'
+
 import { motion } from 'framer-motion'
 
 const fetcher = async (query) => await faundaGQLClient.request(query)
@@ -83,14 +83,6 @@ const StackedList = ({ getAllUsersData }) => {
       </div>
     </div>
   )
-}
-
-export async function getStaticProps({ params }) {
-  const getAllUsersData = await fetcher(getAllUsers)
-  return {
-    props: { getAllUsersData },
-    revalidate: 1,
-  }
 }
 
 export default StackedList
