@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
 
-import '../css/index.css'
+/* import '../css/index.css' */
 
 function MyApp({ Component, pageProps, router }) {
   return (

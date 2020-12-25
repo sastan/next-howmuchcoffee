@@ -21,6 +21,10 @@ class MyDocument extends Document {
             sizes="16x16"
             href="https://nextjs.org/static/favicon/favicon-16x16.png"
           />
+          <script
+            type="module"
+            src="https://cdn.skypack.dev/twind/shim"
+          ></script>
         </Head>
 
         <body>
