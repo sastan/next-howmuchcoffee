@@ -1,7 +1,31 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
+import { tw, setup } from 'twind'
+/* import '../css/index.css' */
 
-import '../css/index.css'
+setup({
+  hash: false, // hash all generated class names (default: false)
+  theme: {}, // define custom theme values (default: tailwind theme)
+  darkMode: 'media',
+  theme: {
+    extend: {
+      colors: {
+        gray: {
+          custom: '#242331',
+        },
+        yellow: {
+          custom: '#edf060',
+        },
+        red: {
+          custom: '#ef233c',
+        },
+      },
+      screens: {
+        standalone: { raw: '(display-mode:standalone)' },
+      },
+    },
+  }, // us ea different dark mode strategy (default: 'media')
+})
 
 function MyApp({ Component, pageProps, router }) {
   return (

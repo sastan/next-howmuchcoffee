@@ -29,18 +29,17 @@
     "graphql-request": "^3.4.0",
     "next": "10.0.3",
     "next-plugin-preact": "^3.0.3",
-    "postcss": "^8.2.1",
     "preact": "^10.5.7",
     "preact-render-to-string": "^5.1.12",
     "preact-ssr-prepass": "^1.1.2",
     "react": "npm:@preact/compat@^0.0.3",
     "react-dom": "npm:@preact/compat@^0.0.3",
     "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.2",
-    "swr": "^0.3.9"
+    "swr": "^0.3.9",
+    "twind": "^0.9.1"
   },
   "devDependencies": {
     "prettier-standard": "^16.4.1",
-    "rustywind": "0.7.0",
-    "tailwindcss": "2.0.2"
+    "rustywind": "0.7.0"
   }
 }

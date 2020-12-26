@@ -1,21 +1,25 @@
 import Link from 'next/link'
 import { useState } from 'react'
-
+import { tw } from 'twind'
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
 
   return (
-    <header className="w-full bg-gray-200 dark:bg-gray-custom">
-      <div className="flex flex-wrap justify-between items-center p-4 mx-auto max-w-4xl  standalone:fixed standalone:mt-6 md:flex-no-wrap md:p-8 ">
-        <div className="flex items-center">
+    <header className={tw`w-full bg-gray-200 dark:bg-gray-custom`}>
+      <div
+        className={tw`flex flex-wrap justify-between items-center p-4 mx-auto max-w-4xl  standalone:fixed standalone:mt-6 md:flex-no-wrap md:p-8 `}
+      >
+        <div className={tw`flex items-center`}>
           <img
             src="logo1.svg"
             alt="logo"
-            className="p-2 mr-3 w-10 bg-gray-800 rounded"
+            className={tw`p-2 mr-3 w-10 bg-gray-800 rounded`}
           />
 
           <Link href="/">
-            <a className="text-xl font-light text-gray-600 dark:text-gray-300">
+            <a
+              className={tw`text-xl font-light text-gray-600 dark:text-gray-300`}
+            >
               How Much Coffee?
             </a>
           </Link>
