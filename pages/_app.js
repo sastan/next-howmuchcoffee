@@ -5,14 +5,7 @@ import twindConfig from '../twind.config'
 /* import '../css/index.css' */
 
 if (typeof window !== 'undefined') {
-  setup(
-    {
-      hash: false, // hash all generated class names (default: false)
-      theme: {}, // define custom theme values (default: tailwind theme)
-      darkMode: 'media',
-    },
-    twindConfig
-  )
+  setup(twindConfig)
 }
 
 function MyApp({ Component, pageProps, router }) {

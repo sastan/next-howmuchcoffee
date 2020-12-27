@@ -1,4 +1,6 @@
 export default {
+  // hash: false, // hash all generated class names (default: false)
+  // darkMode: 'media',
   theme: {
     extend: {
       colors: {
